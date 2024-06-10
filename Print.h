@@ -36,40 +36,40 @@ public:
         std::cout << color << message << consoleColors.reset << std::endl;
     }
 
-    template<typename... Args>
-    void info(Args... args) {
+    template<typename ...Args>
+    void debug(Args ...args) {
         std::cout << "[ ";
         print_in_color("DEBUG", consoleColors.bold+consoleColors.white);
         std::cout << " ] ";
         print(args...);
     }
 
-    template<typename... Args>
-    void info(Args... args) {
+    template<typename ...Args>
+    void info(Args ...args) {
         std::cout << "[ ";
         print_in_color("INFO", consoleColors.bold+consoleColors.blue);
         std::cout << " ] ";
         print(args...);
     }
 
-    template<typename... Args>
-    void ok(Args... args) {
+    template<typename ...Args>
+    void ok(Args ...args) {
         std::cout << "[ ";
         print_in_color("OK", consoleColors.greenColor);
         std::cout << " ] ";
         print(args...);
     }
 
-    template<typename... Args>
-    void warn(Args... args) {
+    template<typename ...Args>
+    void warn(Args ...args) {
         std::cout << "[ ";
         print_in_color("WARN", consoleColors.lightRed);
         std::cout << " ] ";
         print(args...);
     }
 
-    template<typename... Args>
-    void error(Args... args) {
+    template<typename ...Args>
+    void error(Args ...args) {
         std::cout << "[ ";
         print_in_color("ERROR", consoleColors.red);
         std::cout << " ] ";
@@ -83,7 +83,7 @@ private:
         std::cout << arg;
     }
 
-    template<typename First, typename... Args>
+    template<typename First, typename ...Args>
     void print(const First first, Args ...args) 
     {
         std::cout << first; 
