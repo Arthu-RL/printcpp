@@ -5,34 +5,34 @@
 
 struct ConsoleColors
 {
-    const MyString reset = "\033[0m";
-    const MyString bold = "\033[1m";
+    MyString reset = "\033[0m";
+    MyString bold = "\033[1m";
 
     // Normal Colors
-    const MyString black = "\033[30m";
-    const MyString red = "\033[31m";
-    const MyString green = "\033[32m";
-    const MyString yellow = "\033[33m";
-    const MyString blue = "\033[34m";
-    const MyString magenta = "\033[35m";
-    const MyString cyan = "\033[36m";
-    const MyString white = "\033[37m";
+    MyString black = "\033[30m";
+    MyString red = "\033[31m";
+    MyString green = "\033[32m";
+    MyString yellow = "\033[33m";
+    MyString blue = "\033[34m";
+    MyString magenta = "\033[35m";
+    MyString cyan = "\033[36m";
+    MyString white = "\033[37m";
 
     // Light Colors
-    const MyString lightBlack = "\033[90m";
-    const MyString lightRed = "\033[91m";
-    const MyString lightGreen = "\033[92m";
-    const MyString lightYellow = "\033[93m";
-    const MyString lightBlue = "\033[94m";
-    const MyString lightMagenta = "\033[95m";
-    const MyString lightCyan = "\033[96m";
-    const MyString lightWhite = "\033[97m";
+    MyString lightBlack = "\033[90m";
+    MyString lightRed = "\033[91m";
+    MyString lightGreen = "\033[92m";
+    MyString lightYellow = "\033[93m";
+    MyString lightBlue = "\033[94m";
+    MyString lightMagenta = "\033[95m";
+    MyString lightCyan = "\033[96m";
+    MyString lightWhite = "\033[97m";
 } consoleColors;
 
 class Print
 {   
 public:
-    void print_in_color(const char* message, const char* color) {
+    void print_in_color(const char* message, MyString color) {
         std::cout << color << message << consoleColors.reset << std::endl;
     }
 
@@ -55,7 +55,7 @@ public:
     template<typename ...Args>
     void ok(Args ...args) {
         std::cout << "[ ";
-        print_in_color("OK", consoleColors.greenColor);
+        print_in_color("OK", consoleColors.green);
         std::cout << " ] ";
         print(args...);
     }
