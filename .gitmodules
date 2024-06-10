@@ -1,0 +1,3 @@
+[submodule "MyString"]
+	path = MyString
+	url = git@github.com:Arthu-RL/MyString.git
