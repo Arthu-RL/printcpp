@@ -33,7 +33,7 @@ class Print
 {   
 public:
     void print_in_color(const char* message, MyString color) {
-        std::cout << color << message << consoleColors.reset << std::endl;
+        std::cout << color << message << consoleColors.reset;
     }
 
     template<typename ...Args>
@@ -72,6 +72,14 @@ public:
     void error(Args ...args) {
         std::cout << "[ ";
         print_in_color("ERROR", consoleColors.red);
+        std::cout << " ] ";
+        print(args...);
+    }
+
+    template<typename ...Args>
+    void fatal(Args ...args) {
+        std::cout << "[ ";
+        print_in_color("ERROR", consoleColors.bold+consoleColors.red);
         std::cout << " ] ";
         print(args...);
     }
