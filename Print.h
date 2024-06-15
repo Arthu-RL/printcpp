@@ -36,12 +36,17 @@ public:
         std::cout << color << message << consoleColors.reset;
     }
 
+    void bl() {
+        std::cout << '\n';
+    }
+
     template<typename ...Args>
     void debug(Args ...args) {
         std::cout << "[ ";
         print_in_color("DEBUG", consoleColors.bold+consoleColors.white);
         std::cout << " ] ";
         print(args...);
+        bl();
     }
 
     template<typename ...Args>
@@ -50,6 +55,7 @@ public:
         print_in_color("INFO", consoleColors.bold+consoleColors.blue);
         std::cout << " ] ";
         print(args...);
+        bl();
     }
 
     template<typename ...Args>
@@ -58,6 +64,7 @@ public:
         print_in_color("OK", consoleColors.green);
         std::cout << " ] ";
         print(args...);
+        bl();
     }
 
     template<typename ...Args>
@@ -66,6 +73,7 @@ public:
         print_in_color("WARN", consoleColors.lightRed);
         std::cout << " ] ";
         print(args...);
+        bl();
     }
 
     template<typename ...Args>
@@ -74,6 +82,7 @@ public:
         print_in_color("ERROR", consoleColors.red);
         std::cout << " ] ";
         print(args...);
+        bl();
     }
 
     template<typename ...Args>
@@ -82,6 +91,7 @@ public:
         print_in_color("ERROR", consoleColors.bold+consoleColors.red);
         std::cout << " ] ";
         print(args...);
+        bl();
     }
 
 private:
